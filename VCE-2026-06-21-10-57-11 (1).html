@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOSSCHISSA | Premium Firewood & Tree Services Paarl & Wellington</title>
+    <!-- Google Fonts for professional look -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* Color Palette & Base Styles */
+        :root {
+            --primary-orange: #D35400;
+            --secondary-green: #27AE60;
+            --dark-green: #1E6B38;
+            --accent-yellow: #F39C12;
+            --light-bg: #FAFAFA;
+            --dark-text: #2C3E50;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            color: var(--dark-text);
+            background-color: var(--light-bg);
+        }
+
+        h1, h2, h3 {
+            font-family: 'Oswald', sans-serif;
+            text-transform: uppercase;
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: #ffffff;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--primary-orange);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark-text);
+            font-weight: 700;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-orange);
+        }
+
+        /* Business Feature Image Section */
+        .showcase-image-container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+
+        .showcase-img {
+            width: 100%;
+            max-height: 550px;
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+        }
+
+        /* Hero Call Out Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-orange), var(--accent-yellow));
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+            margin-bottom: 40px;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+        }
+
+        .hero p {
+            font-size: 20px;
+            max-width: 800px;
+            margin: 0 auto 25px auto;
+        }
+
+        /* Global Buttons */
+        .cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background-color: #25D366; /* WhatsApp Green */
+            color: white;
+            text-decoration: none;
+            padding: 15px 30px;
+            font-size: 20px;
+            font-weight: bold;
+            border-radius: 50px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            transition: transform 0.3s, background-color 0.3s;
+            cursor: pointer;
+            border: none;
+        }
+
+        .cta-btn:hover {
+            transform: scale(1.05);
+            background-color: #128C7E;
+        }
+
+        /* Small Button for Cards */
+        .card-btn {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin-top: 15px;
+            width: 100%;
+            justify-content: center;
+        }
+
+        /* Grid Layout for Pricing & Services */
+        .main-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px 60px 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        @media (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+            .nav-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border-top: 8px solid;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .firewood-card {
+            border-top-color: var(--primary-orange);
+        }
+
+        .services-card {
+            border-top-color: var(--secondary-green);
+        }
+
+        .card h2 {
+            font-size: 32px;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .firewood-card h2 { color: var(--primary-orange); }
+        .services-card h2 { color: var(--secondary-green); }
+
+        /* Pricing Styling */
+        .price-box {
+            background-color: #FFF5EE;
+            border-left: 5px solid var(--primary-orange);
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .price-tag {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--primary-orange);
+            font-family: 'Oswald', sans-serif;
+        }
+
+        .price-details {
+            font-size: 16px;
+            font-weight: bold;
+            color: #555;
+        }
+
+        /* Services List */
+        .service-list {
+            list-style: none;
+            margin-bottom: 20px;
+        }
+
+        .service-list li {
+            font-size: 18px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .service-list i {
+            color: var(--secondary-green);
+            font-size: 22px;
+        }
+
+        /* Areas Serviced Section */
+        .areas-section {
+            background-color: #EBF5FB;
+            text-align: center;
+            padding: 40px 20px;
+            margin-bottom: 40px;
+            border-radius: 12px;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .areas-section h3 {
+            color: var(--dark-text);
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        /* --- WHATSAPP LIVE CHAT & FLOATING WIDGET --- */
+        .chat-widget-container {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            z-index: 2000;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .chat-button {
+            background-color: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .chat-button:hover {
+            transform: scale(1.1);
+        }
+
+        /* Alert dot on chat icon */
+        .chat-button::after {
+            content: '';
+            position: absolute;
+            top: 2px;
+            right: 2px;
+            width: 12px;
+            height: 12px;
+            background-color: #E74C3C;
+            border-radius: 50%;
+            border: 2px solid white;
+        }
+
+        .chat-box {
+            display: none;
+            width: 320px;
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.25);
+            position: absolute;
+            bottom: 75px;
+            right: 0;
+            overflow: hidden;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .chat-header {
+            background: linear-gradient(135deg, var(--primary-orange), var(--accent-yellow));
+            color: white;
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .chat-header h4 {
+            font-size: 16px;
+            margin-bottom: 2px;
+        }
+
+        .chat-header p {
+            font-size: 12px;
+            opacity: 0.9;
+        }
+
+        .close-chat {
+            cursor: pointer;
+            font-size: 20px;
+            opacity: 0.8;
+        }
+
+        .close-chat:hover { opacity: 1; }
+
+        .chat-body {
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+
+        .chat-msg {
+            background-color: #e8e8e8;
+            padding: 10px 15px;
+            border-radius: 0px 12px 12px 12px;
+            font-size: 14px;
+            color: #333;
+            margin-bottom: 10px;
+            display: inline-block;
+        }
+
+        .chat-footer {
+            padding: 15px;
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .chat-footer textarea {
+            width: 100%;
+            height: 60px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            resize: none;
+            font-family: inherit;
+            font-size: 14px;
+        }
+
+        .chat-footer textarea:focus {
+            outline: none;
+            border-color: var(--primary-orange);
+        }
+
+        .send-chat-btn {
+            background-color: #25D366;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 6px;
+            font-weight: bold;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            transition: background-color 0.2s;
+        }
+
+        .send-chat-btn:hover {
+            background-color: #128C7E;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2C3E50;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 40px;
+        }
+
+        footer p {
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header & Navigation Bar -->
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <i class="fa-solid fa-fire-burner"></i> BOSSCHISSA
+            </a>
+            <ul class="nav-links">
+                <li><a href="#firewood">Firewood</a></li>
+                <li><a href="#services">Tree Services</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Main Visual Showcase Image -->
+    <div class="showcase-image-container">
+        <img src="watermarked_img_17061905619278960959.png" alt="BOSSCHISSA Firewood and Tree Services Showcase" class="showcase-img">
+    </div>
+
+    <!-- Hero Banner Text -->
+    <section class="hero">
+        <h1>Quality Firewood & Expert Tree Services</h1>
+        <p>Top-tier split firewood deals delivered straight to your door or available for collection. We keep Cape Town warm!</p>
+        <button class="cta-btn" onclick="toggleChatWindow()">
+            <i class="fa-brands fa-whatsapp"></i> Open WhatsApp Chat
+        </button>
+    </section>
+
+    <!-- Target Delivery Areas Callout -->
+    <div class="areas-section">
+        <h3><i class="fa-solid fa-map-location-dot" style="color: var(--primary-orange);"></i> Service Areas</h3>
+        <p>Proudly marketing and supplying firewood around <strong>Cape Town</strong>, specializing heavily in <strong>Wellington</strong> and <strong>Paarl</strong>!</p>
+    </div>
+
+    <!-- Core Business Offerings Grid -->
+    <main class="main-content">
+        
+        <!-- Firewood Segment -->
+        <section id="firewood" class="card firewood-card">
+            <div>
+                <h2><i class="fa-solid fa-wood-block"></i> Firewood Deals</h2>
+                <p style="margin-bottom: 20px; font-weight: bold; color: #666;">Get premium seasoned firewood cut to size. Great for braais, fireplaces, and fire pits.</p>
+                
+                <div class="price-box">
+                    <div class="price-tag">R800</div>
+                    <div class="price-details">per 1000 pieces (Without Delivery / Yard Pick-up)</div>
+                </div>
+
+                <div class="price-box">
+                    <div class="price-tag">R1200</div>
+                    <div class="price-details">per 1000 pieces (With Delivery Included)</div>
+                </div>
+            </div>
+            <button class="cta-btn card-btn" onclick="openDirectWhatsApp('Firewood Order Inquiry')">
+                <i class="fa-brands fa-whatsapp"></i> Order Firewood via WhatsApp
+            </button>
+        </section>
+
+        <!-- Professional Tree Services Segment -->
+        <section id="services" class="card services-card">
+            <div>
+                <h2><i class="fa-solid fa-tree"></i> Professional Tree Care</h2>
+                <p style="margin-bottom: 25px; font-weight: bold; color: #666;">Safe, efficient, and fully equipped solutions for your property’s trees.</p>
+                
+                <ul class="service-list">
+                    <li><i class="fa-solid fa-circle-check"></i> Tree Trimming & Shaping</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Precision Tree Cutting & Felling</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Expert Tree Pruning</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Site Clearing & Debris Removal</li>
+                </ul>
+            </div>
+            <button class="cta-btn card-btn" style="background-color: var(--secondary-green);" onclick="openDirectWhatsApp('Tree Services Booking')">
+                <i class="fa-brands fa-whatsapp"></i> Book Tree Service via WhatsApp
+            </button>
+        </section>
+
+    </main>
+
+    <!-- FLOATING INTEGRATED WHATSAPP CUSTOMER CHAT WIDGET -->
+    <div class="chat-widget-container">
+        <div class="chat-box" id="customerChatBox">
+            <div class="chat-header">
+                <div>
+                    <h4>Chat with BOSSCHISSA</h4>
+                    <p><i class="fa-solid fa-circle" style="color: #2ec95c; font-size: 10px;"></i> Online | Ready to Assist</p>
+                </div>
+                <span class="close-chat" onclick="toggleChatWindow()">&times;</span>
+            </div>
+            <div class="chat-body">
+                <div class="chat-msg">
+                    Hello! Welcome to BOSSCHISSA. Let us know how many pieces of firewood you need, or what tree care services you are looking for!
+                </div>
+            </div>
+            <div class="chat-footer">
+                <textarea id="customerMessage" placeholder="Type your message here to start chatting..."></textarea>
+                <button class="send-chat-btn" onclick="sendCustomerWhatsApp()">
+                    <i class="fa-solid fa-paper-plane"></i> Send via WhatsApp
+                </button>
+            </div>
+        </div>
+
+        <!-- Main Floating WhatsApp Icon Button -->
+        <div class="chat-button" onclick="toggleChatWindow()" title="Chat with us on WhatsApp">
+            <i class="fa-brands fa-whatsapp"></i>
+        </div>
+    </div>
+
+    <!-- Footer & Quick Contact Info -->
+    <footer id="contact">
+        <p style="font-size: 24px; font-weight: bold; font-family: 'Oswald', sans-serif;">BOSSCHISSA</p>
+        <p>Paarl, Wellington, and greater Cape Town regions.</p>
+        <p style="margin-top: 15px;">
+            <button class="cta-btn" style="font-size: 16px; padding: 10px 20px;" onclick="openDirectWhatsApp('General Contact')">
+                <i class="fa-brands fa-whatsapp"></i> Call / WhatsApp: +27 75 323 4084
+            </button>
+        </p>
+        <p style="font-size: 12px; color: #95a5a6; margin-top: 30px;">&copy; 2026 BOSSCHISSA. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Script Handling WhatsApp Linking Actions -->
+    <script>
+        var businessNumber = "27753234084";
+
+        // Opens/closes the floating chat module
+        function toggleChatWindow() {
+            var chatBox = document.getElementById("customerChatBox");
+            if (chatBox.style.display === "block") {
+                chatBox.style.display = "none";
+            } else {
+                chatBox.style.display = "block";
+            }
+        }
+
+        // Sends the custom written message through the floating portal
+        function sendCustomerWhatsApp() {
+            var customerText = document.getElementById("customerMessage").value;
+            
+            if (customerText.trim() === "") {
+                customerText = "Hi BOSSCHISSA, I am browsing your website and want to ask about your services.";
+            }
+            
+            var encodedText = encodeURIComponent(customerText);
+            window.open("https://wa.me/" + businessNumber + "?text=" + encodedText, '_blank');
+        }
+
+        // Quick shortcut text sender for the page section buttons
+        function openDirectWhatsApp(topic) {
+            var standardText = "Hi BOSSCHISSA, I am interested in your " + topic + ". Please give me more information!";
+            var encodedText = encodeURIComponent(standardText);
+            window.open("https://wa.me/" + businessNumber + "?text=" + encodedText, '_blank');
+        }
+    </script>
+
+</body>
+</html>
